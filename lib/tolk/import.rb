@@ -23,8 +23,6 @@ module Tolk
           if phrase
             old_translation = locale.translations.where(:phrase_id => phrase.id).first
             if old_translation && old_translation.text != value
-              puts value.inspect
-              puts old_translation.inspect
               old_translation.update_attributes(:text => value)
               count_updated = count_updated + 1
             else

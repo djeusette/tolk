@@ -40,7 +40,7 @@ module Tolk
     def primary_translation
       @_primary_translation ||= begin
         if locale && !locale.primary?
-          raise Error.new "phrase is undefined: #{self.inspect} #{text}" if phrase.nil?
+          raise "phrase is undefined: #{self.inspect} #{text}" if phrase.nil?
           phrase.translations.primary
         end
       end
